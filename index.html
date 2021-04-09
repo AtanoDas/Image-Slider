@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<title>Slider</title>
+</head>
+<body>
+	<div class="slider-container">
+		<div class="slider">
+			<div class="slides">
+				<!-- navigation btn -->
+				<input type="radio" name="radio-btn" id="radio1">
+				<input type="radio" name="radio-btn" id="radio2">
+				<input type="radio" name="radio-btn" id="radio3">
+				<input type="radio" name="radio-btn" id="radio4">
+				<!-- next and prev button -->
+				<input type="radio" name="radio-btn" id="next">
+				<input type="radio" name="radio-btn" id="prev">
+
+				<!-- img slider -->
+
+				<div class="slide first">
+					<img src="img/img1.jpg"  alt="">
+				</div>
+				<div class="slide">
+					<img src="img/img2.jpg" alt="">
+				</div>
+				<div class="slide">
+					<img src="img/img3.jpg" alt="">
+				</div>
+				<div class="slide">
+					<img src="img/img4.jpg" alt="">
+				</div>
+
+			</div>
+
+			<!-- next prev button -->
+			<div class="next-prev-btn">
+				<label for="next" class="next-btn" onclick="nextslide(1)"><i class="fa fa-chevron-circle-right" aria-hidden="true"></i></label>
+				<label for="prev" class="prev-btn" onclick="prevslide(-1)"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></label>
+			</div>
+
+
+
+			<!-- manual navigation section -->
+			<div class="manual-nav">
+				<label for="radio1" class="manual-btn" onclick="displaySlide(1)"></label>
+				<label for="radio2" class="manual-btn" onclick="displaySlide(2)"></label>
+				<label for="radio3" class="manual-btn" onclick="displaySlide(3)"></label>
+				<label for="radio4" class="manual-btn" onclick="displaySlide(4)"></label>
+
+			</div>
+
+
+			
+		</div>
+		
+	</div>
+
+
+	<script type="">
+
+		var first = document.getElementsByClassName('first');
+		var active = 0;
+
+		function displaySlide(b) {
+			active = b;
+
+			setMargin(b);
+		}
+
+		function setMargin(num)
+		{			
+				if(num == 1){
+					first[0].style.marginLeft = '0%';
+				}
+				if(num == 2){
+					first[0].style.marginleft = '-20%';
+
+				}
+				if(num == 3){
+					first[0].style.marginleft = '-40%';
+
+				}
+				if(num == 4){
+					first[0].style.marginleft = '-60%';
+
+				}
+		}
+
+		function nextslide(p){
+
+			active = active+p;
+			setMargin(active);
+
+		}
+
+		function prevslide(q){
+
+			active = active+q;
+			setMargin(active);
+
+		}
+
+
+
+	</script>
+
+
+
+
+
+
+</body>
+</html>
